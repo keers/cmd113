@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+	<!-- link rel="stylesheet" type="text/css" href="css/page_console.css" /-->
+
+	<script type="text/javascript">
+		function ajaxfunction() {
+			
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4) {
+					document.timeform.time.value = xmlhttp.responseText;
+				}
+			}
+			//xmlhttp.open("GET", "proc.jsp", true);
+
+			xmlhttp.open("GET", "http://localhost:8080/cmd113/proc.jsp", true);
+			xmlhttp.send(null);
+			
+			return false;
+		}
+	</script>
+
+	<table id="layout">
+		<tr>
+			<td id="layout-td">
+				<table id="layout-internal">
+					<tr>
+						<td id="area-output" colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td id="area-bottom">
+							<table class="grid">
+								<tr id="area-bottom-tr">
+									<td id="area-command-prefix-td"><span
+										id="area-command-prefix">&gt;&nbsp;</span></td>
+									<td id="area-command">
+										<form action="" method="post" autocomplete="off"
+											onsubmit="ajaxfunction()">
+											<input id="input-query" type="text" name="_input-query"
+												autocomplete="off" />
+										</form>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
