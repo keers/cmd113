@@ -4,6 +4,15 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
 	type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		$("#input-cmd").focus();
+	});
+	
+	$("html").click(function (e)
+	{
+		$("#input-cmd").focus();
+	});
+	
 	function sendCommand() {
 		var cmdVal = $("#input-cmd").val();
 		$("#input-cmd").val('');
