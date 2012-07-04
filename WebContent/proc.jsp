@@ -1,9 +1,7 @@
-Hello
-<b>
 <%
-	String n = request.getParameter("name");
+	String cmd = request.getParameter("cmd");
 
-	System.out.println("SEKI:: " + n);
+	System.out.println("SEKI:: " + cmd);
+	out.println("result from : " + cmd);
 %>
-</b>
-!
+
