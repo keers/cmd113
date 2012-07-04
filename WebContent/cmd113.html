@@ -16,11 +16,13 @@
 			success : function(data) {
 				$("#input-line").before("<tr><td><table><tr><td>&gt;</td><td>"+cmdVal+"</td></tr></table></td></tr>"+
 				"<tr><td>"+data+"</td></tr>");
+				//scroll down
+				$(document).scrollTop($(document).height());
 			},
 			error : function(data) {
 				alert("Error");
 			}
-		});
+		});			
 	};
 </script>
 <style type="text/css">
